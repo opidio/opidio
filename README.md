@@ -17,7 +17,7 @@ Since this project is built in several smaller parts, I've used Docker to keep e
 ### Installing `docker` and `docker-compose`
 `docker` is the main program maintaining the containers (the one reading `Dockerfile`s). `docker-compose` is descriptions of containers and containers they depend on (for example the hub server depends on a database container, so `docker-compose` will start a Postgre database before starting the hub server.
 
-### Install `docker`
+#### Installing `docker`
 Most Linux distros has prebuilt binaries. Using arch or debian for example:
 ```bash
 pacman -S docker # Arch
@@ -25,7 +25,7 @@ sudo apt-get update && sudo apt-get install docker.io # Debian
 ```
 for complete instructions see [docs.docker.com/installation](https://docs.docker.com/installation/).
 
-### Install `docker-compose`
+#### Installing `docker-compose`
 Compose can be either installad as a python package or as a simple self-contained binary. See
 [docs.docker.com/compose/install](http://docs.docker.com/compose/install/) for complete instructions.
 
