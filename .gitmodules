@@ -1,0 +1,9 @@
+[submodule "hub-server"]
+	path = hub-server
+	url = git@github.com:opidio/hub-server.git
+[submodule "android-client"]
+	path = android-client
+	url = git@github.com:opidio/android-client.git
+[submodule "landing-page"]
+	path = landing-page
+	url = git@github.com:opidio/landing-page.git
