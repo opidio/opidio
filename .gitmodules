@@ -7,3 +7,6 @@
 [submodule "landing-page"]
 	path = landing-page
 	url = git@github.com:opidio/landing-page.git
+[submodule "channel-server"]
+	path = channel-server
+	url = git@github.com:opidio/channel-server.git
