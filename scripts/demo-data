@@ -1,0 +1,10 @@
+#!/bin/sh
+# Dependencies:
+#  [httpie](http://httpie.org/)
+
+http post :5000/channel/register name=local slug=local url=http://192.168.0.102 password=sten123
+
+for i in `seq 1 25`;
+	do
+		http post :5000/channel/newvideo channel-slug=local channel-password=sten123 video-slug=test$i video-name=test
+	done 
