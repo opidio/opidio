@@ -36,14 +36,23 @@ First up I'll get a reverse proxy that each docker container will plug into. For
 ```bash
 docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy
 ```
-### Web client
-The webclient is a placeholder app for the startpage at [opid.op](http://opid.io). Currently it's nothing but a static html page.
+### Web client ([opidio/web-client](https://github.com/opidio/web-client))
+The webclient is a placeholder app for the startpage at [opid.io](http://opid.io). Currently it's nothing but a static html page.
 ```bash
 # Grab and build
 git clone https://github.com/opidio/web-client.git && cd web-client
 docker build -t web-client .
-# And start it:
+# Start it
 docker run -d --restart=always -e VIRTUAL_HOST=opid.io web-client
+```
+### Landing page ([opidio/landing-page](https://github.com/opidio/landing-page))
+The landing page with a signup form, hosted at [get.opid.io](http://get.opid.io)
+```bash
+# Grab and build
+git clone https://github.com/opidio/landing-page.git && cd landing-page
+docker build -t landing-page .
+# Start it
+docker run -d --restart=always -e VIRTUAL_HOST=get.opid.io landing-page
 ```
 ### `hub-server`
 
