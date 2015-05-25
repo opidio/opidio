@@ -34,7 +34,7 @@ This is a complete guide of how I set up all servers on a VPS (including a rever
 ### Reverse proxy
 First up I'll get a reverse proxy that each docker container will plug into. For this I'm using the simple [nginx-proxy](https://github.com/jwilder/nginx-proxy) with my own modifications [Ineentho/nginx-proxy](https://github.com/Ineentho/nginx-proxy).
 ```bash
-docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock Ineentho/nginx-proxy
+docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock ineentho/nginx-proxy
 ```
 ### Web client ([opidio/web-client](https://github.com/opidio/web-client))
 The webclient is a placeholder app for the startpage at [opid.io](http://opid.io). Currently it's nothing but a static html page.
