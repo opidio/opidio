@@ -2,9 +2,14 @@
 # Dependencies:
 #  [httpie](http://httpie.org/)
 
-http post :5000/channel/register name=local slug=local url=http://192.168.0.102 password=sten123
+export url=http://192.168.0.102
 
-for i in `seq 1 25`;
-	do
-		http post :5000/channel/newvideo channel-slug=local channel-password=sten123 video-slug=test$i video-name=test
-	done 
+# Create the channels
+http post :5000/channel/register name=Monstercat slug=monstercat url=$url/monstercat password=sten123 hosted-by=edmDistrict
+http post :5000/channel/register name="Clarkson, Hammond & May Live" slug=clarkson-hammond-may-live url=$url/clarkson-hammond-may-live password=sten123 hosted-by=BBC
+
+# Add the videos
+http post :5000/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=eminence-soulero--invisible video-name="Eminence & Soulero - Invisible (feat. Mari-Anna)"
+http post :5000/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=loading-the-trucks video-name="Loading the trucks"
+http post :5000/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=stephen-walking--difference-between-aliens video-name="Stephen Walking - The Difference Between Us And The Aliens"
+http post :5000/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=rockin-robin video-name="Rockin' Robin"
