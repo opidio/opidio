@@ -67,3 +67,15 @@ docker build -t hub-server .
 # Start it
 docker run --link db:postgres -d --restart=always -e VIRTUAL_HOST=hub.opid.io hub-server
 ```
+### Channel server ([opidio/channel-server](https://github.com/opidio/channel-server))
+The channel server is just a static file server. You will probably not have to start your own unless you want to host your own content. For testing, there's a premade server at [channel.opid.io](http://channel.opid.io) as described in the repo.
+```bash
+# `~/channel-server` is a folder layed out as described in the channel-server repo
+docker run --restart=always  -v ~/channel-server/:/usr/share/nginx/html:ro -e VIRTUAL_HOST=channel.opid.io -d nginx
+```
+### Fill the hub server with demo data
+In order to make the hub server aware of which videos are availiable they have to be registered. You can do this for the sample videos using the `demo-data` script in this repo:
+```bash
+cd scripts
+hub=http://hub.opid.io channel=http://channel.opid.io ./demo-data
+```
