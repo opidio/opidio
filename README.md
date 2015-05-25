@@ -32,9 +32,9 @@ Compose can be either installad as a python package or as a simple self-containe
 ## Running the servers
 This is a complete guide of how I set up all servers on a VPS (including a reverse proxy). Alternatively you can use the instructions on the hub-server page using docker-compose to run a development server.
 ### Reverse proxy
-First up I'll get a reverse proxy that each docker container will plug into. For this I'm using the simple [nginx-proxy](https://github.com/jwilder/nginx-proxy)
+First up I'll get a reverse proxy that each docker container will plug into. For this I'm using the simple [nginx-proxy](https://github.com/jwilder/nginx-proxy) with my own modifications [Ineentho/nginx-proxy](https://github.com/Ineentho/nginx-proxy).
 ```bash
-docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy
+docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock Ineentho/nginx-proxy
 ```
 ### Web client ([opidio/web-client](https://github.com/opidio/web-client))
 The webclient is a placeholder app for the startpage at [opid.io](http://opid.io). Currently it's nothing but a static html page.
