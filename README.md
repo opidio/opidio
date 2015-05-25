@@ -30,6 +30,23 @@ Compose can be either installad as a python package or as a simple self-containe
 [docs.docker.com/compose/install](http://docs.docker.com/compose/install/) for complete instructions.
 
 ## Running the servers
+This is a complete guide of how I set up all servers on a VPS (including a reverse proxy). It's possible to skip all except hub-server.
+### Reverse proxy
+First up I'll get a reverse proxy that each docker container will plug into. For this I'm using the simple [nginx-proxy](https://github.com/jwilder/nginx-proxy)
+```bash
+docker run --restart=always -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy
+```
+### Web client
+The webclient is a placeholder app for the startpage at [opid.op](http://opid.io). Currently it's nothing but a static html page.
+```bash
+# Grab and build
+git clone https://github.com/opidio/web-client.git && cd web-client
+docker build -t web-client .
+# And start it:
+docker run -d --restart=always -e VIRTUAL_HOST=opid.io web-client
+```
+### `hub-server`
+
 Currently only the `hub-server` is in a working state, and the `android-client` is still not connected to it.
 
 Now that you have Docker installed, running the servers should be as easy as `git clone ... && docker-compose up`. See the individual projects READMEs for more details.
