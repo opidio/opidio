@@ -3,11 +3,11 @@
 #  [httpie](http://httpie.org/)
 
 # Create the channels
-http post $hub/channel/register name=Monstercat slug=monstercat url=$channel/monstercat password=sten123 hosted-by=edmDistrict
-http post $hub/channel/register name="Clarkson, Hammond & May Live" slug=clarkson-hammond-may-live url=$channel/clarkson-hammond-may-live password=sten123 hosted-by=BBC
+http post $HUB/channel/register name=Monstercat slug=monstercat url=$channel/monstercat password=sten123 hosted-by=edmDistrict
+http post $HUB/channel/register name="Clarkson, Hammond & May Live" slug=clarkson-hammond-may-live url=$channel/clarkson-hammond-may-live password=sten123 hosted-by=BBC
 
 # Add the videos
-http post $hub/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=eminence-soulero--invisible video-name="Eminence & Soulero - Invisible (feat. Mari-Anna)"
-http post $hub/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=loading-the-trucks video-name="Loading the trucks"
-http post $hub/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=stephen-walking--difference-between-aliens video-name="Stephen Walking - The Difference Between Us And The Aliens"
-http post $hub/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=rockin-robin video-name="Rockin' Robin"
+http post $HUB/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=eminence-soulero--invisible video-name="Eminence & Soulero - Invisible (feat. Mari-Anna)"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=loading-the-trucks video-name="Loading the trucks"
+http post $HUB/channel/newvideo channel-slug=monstercat channel-password=sten123 video-slug=stephen-walking--difference-between-aliens video-name="Stephen Walking - The Difference Between Us And The Aliens"
+http post $HUB/channel/newvideo channel-slug=clarkson-hammond-may-live channel-password=sten123 video-slug=rockin-robin video-name="Rockin' Robin"

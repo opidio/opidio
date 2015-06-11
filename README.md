@@ -77,5 +77,5 @@ docker run --restart=always  -v ~/channel-server/:/usr/share/nginx/html:ro -e VI
 In order to make the hub server aware of which videos are availiable they have to be registered. You can do this for the sample videos using the `demo-data` script in this repo:
 ```bash
 cd scripts
-hub=http://hub.opid.io channel=http://channel.opid.io ./demo-data
+HUB=hub.opid.io channel=http://channel.opid.io ./demo-data
 ```
